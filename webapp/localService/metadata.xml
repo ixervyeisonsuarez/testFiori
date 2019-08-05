@@ -1,0 +1,180 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:atom="http://www.w3.org/2005/Atom" Version="1.0">
+	<edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:sf="http://www.successfactors.com/edm/sf"
+			xmlns:sap="http://www.successfactors.com/edm/sap" Namespace="SFODataSet">
+			<EntityContainer Name="EntityContainer" m:IsDefaultEntityContainer="true">
+				<EntitySet Name="User" EntityType="SFOData.User" sap:label="User" sap:creatable="true" sap:updatable="true" sap:upsertable="true"
+					sap:deletable="false">
+					<Documentation>
+						<Summary>User</Summary>
+						<LongDescription>Contains information about a system user including log in user name, password, and summaries of user personal and
+							organizational information.</LongDescription>
+						<sap:tagcollection>
+							<sap:tag>Foundation/Platform (PLT)</sap:tag>
+							<sap:tag>PLT - User Management</sap:tag>
+						</sap:tagcollection>
+					</Documentation>
+				</EntitySet>
+				<AssociationSet Name="matrixManager_of_user" Association="SFOData.matrixManager_of_user"><End EntitySet="User" Role="matrixManager"/><End EntitySet="User" Role="user"/></AssociationSet>
+				<AssociationSet Name="customManager_of_user" Association="SFOData.customManager_of_user"><End EntitySet="User" Role="customManager"/><End EntitySet="User" Role="user"/></AssociationSet>
+				<AssociationSet Name="hr_of_user" Association="SFOData.hr_of_user"><End EntitySet="User" Role="hr"/><End EntitySet="User" Role="user"/></AssociationSet>
+				<AssociationSet Name="proxy_of_user" Association="SFOData.proxy_of_user"><End EntitySet="User" Role="proxy"/><End EntitySet="User" Role="user"/></AssociationSet>
+				<AssociationSet Name="secondManager_of_user" Association="SFOData.secondManager_of_user"><End EntitySet="User" Role="secondManager"/><End EntitySet="User" Role="user"/></AssociationSet>
+				<AssociationSet Name="manager_of_user" Association="SFOData.manager_of_user"><End EntitySet="User" Role="manager"/><End EntitySet="User" Role="user"/></AssociationSet>
+			</EntityContainer>
+		</Schema>
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:sf="http://www.successfactors.com/edm/sf"
+			xmlns:sap="http://www.successfactors.com/edm/sap" Namespace="SFOData">
+			<EntityType Name="User">
+				<Key><PropertyRef Name="userId"/></Key><Property Name="CostCenter" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" sap:field-control="userPermissionsNav/CostCenter"
+					sap:label="Centro de costo"/><Property Name="addressLine1" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="255"
+					sap:field-control="userPermissionsNav/addressLine1" sap:label="Address 1"/><Property Name="addressLine2" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="255"
+					sap:field-control="userPermissionsNav/addressLine2" sap:label="Address 2"/><Property Name="benchStrength" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="100" sap:picklist="benchStrength"
+					sap:field-control="userPermissionsNav/benchStrength" sap:label="Bench Strength"/><Property Name="businessPhone" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="20"
+					sap:field-control="userPermissionsNav/businessPhone" sap:label="Business Phone"/><Property Name="city" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true" sap:upsertable="true"
+					sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="255" sap:field-control="userPermissionsNav/city" sap:label="City"/><Property Name="country" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="255"
+					sap:field-control="userPermissionsNav/country" sap:label="Country"/><Property Name="custom01" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="255"
+					sap:field-control="userPermissionsNav/custom01" sap:label="Celda"/><Property Name="custom02" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="255"
+					sap:field-control="userPermissionsNav/custom02" sap:label="N_Celda"/><Property Name="custom03" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="255"
+					sap:field-control="userPermissionsNav/custom03" sap:label="N_Resp"/><Property Name="custom04" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="255"
+					sap:field-control="userPermissionsNav/custom04" sap:label="ID_Resp"/><Property Name="custom05" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="255"
+					sap:field-control="userPermissionsNav/custom05" sap:label="CURP"/><Property Name="custom06" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="255"
+					sap:field-control="userPermissionsNav/custom06" sap:label="Estado Civil"/><Property Name="custom07" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="255"
+					sap:field-control="userPermissionsNav/custom07" sap:label="Fecha nacimiento"/><Property Name="custom08" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="255"
+					sap:field-control="userPermissionsNav/custom08" sap:label="Fecha Ult Puesto"/><Property Name="custom09" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="255"
+					sap:field-control="userPermissionsNav/custom09" sap:label="Nivel EJ"/><Property Name="custom10" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="255"
+					sap:field-control="userPermissionsNav/custom10" sap:label="Convenio"/><Property Name="custom11" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="255"
+					sap:field-control="userPermissionsNav/custom11" sap:label="Customizable Field 11"/><Property Name="custom12" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="255"
+					sap:field-control="userPermissionsNav/custom12" sap:label="ID Resp2"/><Property Name="custom13" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="255"
+					sap:field-control="userPermissionsNav/custom13" sap:label="N Resp2"/><Property Name="custom14" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="255"
+					sap:field-control="userPermissionsNav/custom14" sap:label="Customizable Field 14"/><Property Name="custom15" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="255"
+					sap:field-control="userPermissionsNav/custom15" sap:label="Customizable Field 15"/><Property Name="dateOfBirth" Type="Edm.DateTime" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" sap:field-control="userPermissionsNav/dateOfBirth"
+					sap:display-format="Date" sap:label="Date Of Birth"/><Property Name="defaultFullName" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="false" sap:updatable="false"
+					sap:upsertable="false" sap:visible="true" sap:sortable="false" sap:filterable="false" sap:field-control="userPermissionsNav/defaultFullName"
+					sap:label="defaultFullName"/><Property Name="defaultLocale" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="32"
+					sap:field-control="userPermissionsNav/defaultLocale" sap:label="Default Locale"/><Property Name="department" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="true" sap:filterable="true" MaxLength="128"
+					sap:field-control="userPermissionsNav/department" sap:label="Department"/><Property Name="division" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="true" sap:filterable="true" MaxLength="128"
+					sap:field-control="userPermissionsNav/division" sap:label="Division"/><Property Name="email" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="100"
+					sap:field-control="userPermissionsNav/email" sap:label="Email"/><Property Name="empId" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="255"
+					sap:field-control="userPermissionsNav/empId" sap:label="Employee Id"/><Property Name="ethnicity" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="100" sap:picklist="tipoCobertura"
+					sap:field-control="userPermissionsNav/ethnicity" sap:label="Tipo de Cobertura"/><Property Name="fax" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true" sap:upsertable="true"
+					sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="20" sap:field-control="userPermissionsNav/fax"
+					sap:label="Business Fax"/><Property Name="firstName" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="true" sap:filterable="true" MaxLength="128"
+					sap:field-control="userPermissionsNav/firstName" sap:label="First Name"/><Property Name="futureLeader" Type="Edm.Boolean" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" sap:field-control="userPermissionsNav/futureLeader"
+					sap:label="Future Leader"/><Property Name="gender" Type="Edm.String" Nullable="false" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="2"
+					sap:field-control="userPermissionsNav/gender" sap:label="Gender"/><Property Name="hireDate" Type="Edm.DateTime" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" sap:field-control="userPermissionsNav/hireDate"
+					sap:display-format="Date" sap:label="Hire Date"/><Property Name="impactOfLoss" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="100" sap:picklist="impactOfLoss"
+					sap:field-control="userPermissionsNav/impactOfLoss" sap:label="Impact of Loss"/><Property Name="jobCode" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="true" sap:filterable="true" MaxLength="128"
+					sap:field-control="userPermissionsNav/jobCode" sap:label="Job Code"/><Property Name="keyPosition" Type="Edm.Boolean" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" sap:field-control="userPermissionsNav/keyPosition"
+					sap:label="Key Position"/><Property Name="lastModified" Type="Edm.DateTime" Nullable="true" sap:required="false" sap:creatable="false" sap:updatable="false"
+					sap:upsertable="false" sap:visible="true" sap:sortable="true" sap:filterable="true" sap:field-control="userPermissionsNav/lastModified"
+					sap:display-format="Date" sap:label="lastModified"/><Property Name="lastModifiedDateTime" Type="Edm.DateTimeOffset" Nullable="true" sap:required="false" sap:creatable="false"
+					sap:updatable="false" sap:upsertable="false" sap:visible="true" sap:sortable="true" sap:filterable="true"
+					sap:field-control="userPermissionsNav/lastModifiedDateTime" sap:label="lastModifiedDateTime"/><Property Name="lastModifiedWithTZ" Type="Edm.DateTimeOffset" Nullable="true" sap:required="false" sap:creatable="false"
+					sap:updatable="false" sap:upsertable="false" sap:visible="true" sap:sortable="true" sap:filterable="true"
+					sap:field-control="userPermissionsNav/lastModifiedWithTZ" sap:label="lastModifiedWithTZ"/><Property Name="lastName" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="true" sap:filterable="true" MaxLength="128"
+					sap:field-control="userPermissionsNav/lastName" sap:label="Last Name"/><Property Name="lastReviewDate" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" sap:field-control="userPermissionsNav/lastReviewDate"
+					sap:label="Last Review Date"/><Property Name="location" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="true" sap:filterable="true" MaxLength="128"
+					sap:field-control="userPermissionsNav/location" sap:label="Location"/><Property Name="loginMethod" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="8"
+					sap:field-control="userPermissionsNav/loginMethod" sap:label="Login Method"/><Property Name="matrix1Label" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="false" sap:updatable="false"
+					sap:upsertable="false" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="100"
+					sap:field-control="userPermissionsNav/matrix1Label" sap:label="Posición 9Box"/><Property Name="mi" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true" sap:upsertable="true"
+					sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="128" sap:field-control="userPermissionsNav/mi"
+					sap:label="Middle Name"/><Property Name="minority" Type="Edm.Boolean" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" sap:field-control="userPermissionsNav/minority"
+					sap:label="Sucesor Reporte Directo"/><Property Name="newToPosition" Type="Edm.Boolean" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" sap:field-control="userPermissionsNav/newToPosition"
+					sap:label="New to Company"/><Property Name="onboardingId" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" sap:label="onboardingId"/><Property Name="password" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="false" sap:sortable="false" sap:filterable="false" MaxLength="128"
+					sap:field-control="userPermissionsNav/password" sap:label="password"/><Property Name="reasonForLeaving" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="100" sap:picklist="reasonForLeaving"
+					sap:field-control="userPermissionsNav/reasonForLeaving" sap:label="Reason for Leaving"/><Property Name="reviewFreq" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="256"
+					sap:field-control="userPermissionsNav/reviewFreq" sap:label="Review Frequency"/><Property Name="riskOfLoss" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" sap:picklist="riskOfLoss"
+					sap:field-control="userPermissionsNav/riskOfLoss" sap:label="Risk of Loss"/><Property Name="sciLastModified" Type="Edm.DateTimeOffset" Nullable="true" sap:required="false" sap:creatable="false" sap:updatable="false"
+					sap:upsertable="false" sap:visible="true" sap:sortable="true" sap:filterable="true" sap:field-control="userPermissionsNav/sciLastModified"
+					sap:label="sciLastModified"/><Property Name="state" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="20"
+					sap:field-control="userPermissionsNav/state" sap:label="State"/><Property Name="status" Type="Edm.String" Nullable="false" sap:required="true" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="true" sap:filterable="true" MaxLength="17"
+					sap:field-control="userPermissionsNav/status" sap:label="status"/><Property Name="talentPool" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="100" sap:picklist="talentPool"
+					sap:field-control="userPermissionsNav/talentPool" sap:label="Talent Pool"/><Property Name="teamMembersSize" Type="Edm.Int32" Nullable="true" sap:required="false" sap:creatable="false" sap:updatable="false"
+					sap:upsertable="false" sap:visible="true" sap:sortable="false" sap:filterable="false" sap:field-control="userPermissionsNav/teamMembersSize"
+					sap:label="teamMembersSize"/><Property Name="timeZone" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="16"
+					sap:field-control="userPermissionsNav/timeZone" sap:label="Time Zone"/><Property Name="title" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="255"
+					sap:field-control="userPermissionsNav/title" sap:label="Title"/><Property Name="totalTeamSize" Type="Edm.Int64" Nullable="true" sap:required="false" sap:creatable="false" sap:updatable="false"
+					sap:upsertable="false" sap:visible="true" sap:sortable="false" sap:filterable="false" sap:field-control="userPermissionsNav/totalTeamSize"
+					sap:label="totalTeamSize"/><Property Name="userId" Type="Edm.String" Nullable="false" sap:required="true" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="true" sap:filterable="true" MaxLength="100"
+					sap:field-control="userPermissionsNav/userId" sap:label="userId"/><Property Name="username" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="true" sap:filterable="true" MaxLength="100"
+					sap:field-control="userPermissionsNav/username" sap:label="Username"/><Property Name="zipCode" Type="Edm.String" Nullable="true" sap:required="false" sap:creatable="true" sap:updatable="true"
+					sap:upsertable="true" sap:visible="true" sap:sortable="false" sap:filterable="false" MaxLength="10"
+					sap:field-control="userPermissionsNav/zipCode" sap:label="ZIP"/><NavigationProperty Name="directReports" sap:required="false" sap:creatable="false" sap:updatable="false" sap:upsertable="false"
+					sap:visible="true" sap:sortable="false" sap:filterable="false" Relationship="SFOData.manager_of_user" FromRole="manager" ToRole="user"
+					sap:field-control="userPermissionsNav/directReports" sap:label="directReports"/><NavigationProperty Name="hr" sap:required="false" sap:creatable="true" sap:updatable="true" sap:upsertable="true" sap:visible="true"
+					sap:sortable="true" sap:filterable="true" Relationship="SFOData.hr_of_user" FromRole="user" ToRole="hr"
+					sap:field-control="userPermissionsNav/hr" sap:label="Human Resource"/><NavigationProperty Name="hrReports" sap:required="false" sap:creatable="false" sap:updatable="false" sap:upsertable="false"
+					sap:visible="true" sap:sortable="false" sap:filterable="false" Relationship="SFOData.hr_of_user" FromRole="hr" ToRole="user"
+					sap:field-control="userPermissionsNav/hrReports" sap:label="hrReports"/><NavigationProperty Name="manager" sap:required="false" sap:creatable="true" sap:updatable="true" sap:upsertable="true" sap:visible="true"
+					sap:sortable="true" sap:filterable="true" Relationship="SFOData.manager_of_user" FromRole="user" ToRole="manager"
+					sap:field-control="userPermissionsNav/manager" sap:label="Manager"/><NavigationProperty Name="matrixManager" sap:required="false" sap:creatable="true" sap:updatable="true" sap:upsertable="true"
+					sap:visible="true" sap:sortable="true" sap:filterable="true" Relationship="SFOData.matrixManager_of_user" FromRole="user"
+					ToRole="matrixManager" sap:field-control="userPermissionsNav/matrixManager" sap:label="Matrix Manager"/><NavigationProperty Name="matrixReports" sap:required="false" sap:creatable="false" sap:updatable="false" sap:upsertable="false"
+					sap:visible="true" sap:sortable="false" sap:filterable="false" Relationship="SFOData.matrixManager_of_user" FromRole="matrixManager"
+					ToRole="user" sap:field-control="userPermissionsNav/matrixReports" sap:label="matrixReports"/><NavigationProperty Name="proxy" sap:required="false" sap:creatable="true" sap:updatable="true" sap:upsertable="true" sap:visible="true"
+					sap:sortable="true" sap:filterable="true" Relationship="SFOData.proxy_of_user" FromRole="user" ToRole="proxy"
+					sap:field-control="userPermissionsNav/proxy" sap:label="Proxy"/></EntityType>
+			<Association Name="matrixManager_of_user"><End Type="SFOData.User" Multiplicity="*" Role="matrixManager"/><End Type="SFOData.User" Multiplicity="*" Role="user"/></Association>
+			<Association Name="customManager_of_user"><End Type="SFOData.User" Multiplicity="*" Role="customManager"/><End Type="SFOData.User" Multiplicity="*" Role="user"/></Association>
+			<Association Name="hr_of_user"><End Type="SFOData.User" Multiplicity="0..1" Role="hr"/><End Type="SFOData.User" Multiplicity="*" Role="user"/></Association>
+			<Association Name="proxy_of_user"><End Type="SFOData.User" Multiplicity="*" Role="proxy"/><End Type="SFOData.User" Multiplicity="*" Role="user"/></Association>
+			<Association Name="secondManager_of_user"><End Type="SFOData.User" Multiplicity="0..1" Role="secondManager"/><End Type="SFOData.User" Multiplicity="*" Role="user"/></Association>
+			<Association Name="manager_of_user"><End Type="SFOData.User" Multiplicity="0..1" Role="manager"/><End Type="SFOData.User" Multiplicity="*" Role="user"/></Association>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
